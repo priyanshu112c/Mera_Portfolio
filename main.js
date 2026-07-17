@@ -17,22 +17,27 @@ menuLinks.forEach(link => {
     });
 });
 
-const dark = document.querySelector('.dark')
-const light = document.querySelector('.light')
-dark.addEventListener('click',()=>{
+const darkIcons = document.querySelectorAll('.dark')
+const lightIcons = document.querySelectorAll('.light')
+
+function enableDarkTheme() {
     document.querySelector("link[href='style.css']").href = 'darkstyle.css'
-    light.style.display = 'block'
-    dark.style.display = 'none'
+    darkIcons.forEach(el => el.style.display = 'none')
+    lightIcons.forEach(el => el.style.display = 'block')
     if (change_img) change_img.src = "assets/Extra/Vector 1-dark.png"
     if (vector3) vector3.src = "assets/Extra/Vector3-dark.png"
-})
-light.addEventListener('click',()=>{
+}
+
+function enableLightTheme() {
     document.querySelector("link[href='darkstyle.css']").href = 'style.css'
-    light.style.display = 'none'
-    dark.style.display = 'block'
+    lightIcons.forEach(el => el.style.display = 'none')
+    darkIcons.forEach(el => el.style.display = 'block')
     if (change_img) change_img.src = "assets/Extra/Vector 1.png"
     if (vector3) vector3.src = "assets/Extra/Vector3.png"
-})
+}
+
+darkIcons.forEach(el => el.addEventListener('click', enableDarkTheme))
+lightIcons.forEach(el => el.addEventListener('click', enableLightTheme))
 
 gsap.from('#profile1, .vector1, .vector3',{
     y:70,
