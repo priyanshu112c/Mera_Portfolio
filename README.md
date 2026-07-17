@@ -1,6 +1,7 @@
 # Priyanshu Chandra — Portfolio
 
 A modern, responsive personal portfolio website built with vanilla HTML, CSS, and JavaScript. Features a light/dark theme toggle, scroll-triggered animations via GSAP, and a clean card-based layout to showcase skills, projects, and services.
+Live:- https://priyanshu112c.github.io/Mera_Portfolio/copytest.html
 
 ## Features
 
